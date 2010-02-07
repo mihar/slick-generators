@@ -1,0 +1,42 @@
+Description:
+    The slick_layout generator creates a basic stylesheet and layout
+    which will give some structure to a starting Rails app.
+
+    Basically you just run this generator, to get a basic 
+    application.html.haml layout, that has the doctype 
+    and common features such as the title yielding and other 
+    structural elements.
+
+    You also get several SASS stylesheet files that provide basic styling
+    functionality, such as reseting the browser styles, common form styling,
+    and separation of head, menu, content, foot, common styles in seperate
+    files.
+
+    An application wide helpers is also included, with several common methods
+    for including javascript, setting the title, and so forth.
+
+Options:
+    --no-style  No SASS file will be made.
+
+Examples:
+    ./script/generate slick_layout
+
+        This will create several files:
+            Layout:     app/views/layouts/application.html.haml
+            Stylesheets:
+                Main:   public/stylesheets/sass/application.sass
+                Head:   public/stylesheets/sass/head.sass
+                Menu:   public/stylesheets/sass/head.sass
+               Content: public/stylesheets/sass/content.sass
+                Head:   public/stylesheets/sass/head.sass
+                Common: public/stylesheets/sass/common.sass
+                Forms:  public/stylesheets/sass/forms.sass
+                Admin:  public/stylesheets/sass/admin.sass
+            Helper:     app/helpers/application_helper.rb
+
+
+    ./script/generate slick_layout --no-style
+
+        This will create one file:
+            Layout:     app/views/layouts/application.html.haml
+            Helper:     app/helpers/application_helper.rb
