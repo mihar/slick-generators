@@ -1,0 +1,5 @@
+- if admin?
+  #admin_info
+    Prijavljeni kot
+    = current_user.full_name
+    = link_to "Odjava", session_path(1), :method => :delete

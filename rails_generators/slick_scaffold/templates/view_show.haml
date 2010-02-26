@@ -1,0 +1,10 @@
+= title @<%= singular_name %>
+
+<% for attribute in attributes -%>
+%p
+  %strong <%= attribute.column.human_name %>:
+  =h @<%= singular_name %>.<%= attribute.name %>
+<% end -%>
+
+- admin_section do
+  = link_to 'Uredi', edit_object_url

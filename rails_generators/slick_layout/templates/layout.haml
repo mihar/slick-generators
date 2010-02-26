@@ -7,7 +7,11 @@
     / = javascript_include_tag :all
     = yield :head
   %body{body_attrs}
-    = render :partial => "layouts/admin_gate"
+  <% if @use_admin -%>
+  = render :partial => "layouts/admin_gate"
+  = render :partial => "layouts/admin_info"
+  <% end -%>
+  
     #wrap
       #head
         %h1= link_to "APPTITLE", root_path

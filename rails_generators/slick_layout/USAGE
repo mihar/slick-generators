@@ -16,7 +16,8 @@ Description:
     for including javascript, setting the title, and so forth.
 
 Options:
-    --no-style  No SASS file will be made.
+    --no-style  No SASS file will be created.
+    --no-admin  No admin info files will be created.
 
 Examples:
     ./script/generate slick_layout
@@ -25,18 +26,18 @@ Examples:
             Layout:     app/views/layouts/application.html.haml
             Stylesheets:
                 Main:   public/stylesheets/sass/application.sass
-                Head:   public/stylesheets/sass/head.sass
-                Menu:   public/stylesheets/sass/head.sass
-               Content: public/stylesheets/sass/content.sass
-                Head:   public/stylesheets/sass/head.sass
-                Common: public/stylesheets/sass/common.sass
-                Forms:  public/stylesheets/sass/forms.sass
-                Admin:  public/stylesheets/sass/admin.sass
+                Head:   public/stylesheets/sass/_head.sass
+                Menu:   public/stylesheets/sass/_head.sass
+               Content: public/stylesheets/sass/_content.sass
+                Head:   public/stylesheets/sass/_head.sass
+                Common: public/stylesheets/sass/_common.sass
+                Forms:  public/stylesheets/sass/_forms.sass
+                Admin:  public/stylesheets/sass/_admin.sass
             Helper:     app/helpers/application_helper.rb
 
 
     ./script/generate slick_layout --no-style
 
-        This will create one file:
+        This will create XX files:
             Layout:     app/views/layouts/application.html.haml
             Helper:     app/helpers/application_helper.rb

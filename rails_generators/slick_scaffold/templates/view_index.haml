@@ -1,0 +1,23 @@
+= title "<%= plural_name %>"
+
+%table{:class => "nice"}
+  %thead
+    %tr
+  <% for attribute in attributes -%>
+    %th <%= attribute.column.human_name %>
+  <% end -%>
+  %tbody
+    - @<%= plural_name %>.each do |<%= singular_name %>|
+      %tr
+      <% for attribute in attributes -%>
+  %td= h <%= singular_name %>.<%= attribute.name %>
+      <% end -%>    
+        %td
+          - admin_section do
+            = link_to 'Odpri', object_url(<%= singular_name %>)
+            = link_to 'Uredi', edit_object_url(<%= singular_name %>)
+            = link_to 'Odstrani', object_url(<%= singular_name %>), :confirm => destroy_confirmation(<%= singular_name %>), :method => :delete
+
+
+- admin_section do
+  = link_to 'New <%= singular_name %>', new_object_url
